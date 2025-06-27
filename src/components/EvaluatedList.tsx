@@ -4,6 +4,8 @@ import Legend from "./Legend";
 const EvaluatedList = ({ finalList }: { finalList: GroupedTask[] }) => {
   const itemHeight = 100;
   const height = 600;
+
+  // itemheight and height are in pixels , and can be dynamic if required and can be passed down as props
   const [indices, setIndices] = useState<number[]>([
     0,
     Math.floor(height / itemHeight),
@@ -12,10 +14,12 @@ const EvaluatedList = ({ finalList }: { finalList: GroupedTask[] }) => {
   const filteredList = useMemo(
     () =>
       finalList.filter(
-        (item) => item.status === "WARNING" || item.status === "ERROR"
+        (item) => item.status === "WARNING" || item.status === "ERROR" // remove the ok tasks from the list to render
       ),
     [finalList]
   );
+
+  // adding caching just in case the list is too long
   const visibleList = filteredList.slice(indices[0], indices[1] + 1);
 
   const handleOnScroll = (e) => {
