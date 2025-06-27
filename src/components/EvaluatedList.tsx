@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { formatTime } from "../../helper/formatTime";
+import Legend from "./Legend";
 const EvaluatedList = ({ finalList }: { finalList: GroupedTask[] }) => {
   const itemHeight = 100;
   const height = 600;
@@ -7,7 +8,15 @@ const EvaluatedList = ({ finalList }: { finalList: GroupedTask[] }) => {
     0,
     Math.floor(height / itemHeight),
   ]);
-  const visibleList = finalList.slice(indices[0], indices[1] + 1);
+
+  const filteredList = useMemo(
+    () =>
+      finalList.filter(
+        (item) => item.status === "WARNING" || item.status === "ERROR"
+      ),
+    [finalList]
+  );
+  const visibleList = filteredList.slice(indices[0], indices[1] + 1);
 
   const handleOnScroll = (e) => {
     const { scrollTop } = e.target;
@@ -15,12 +24,13 @@ const EvaluatedList = ({ finalList }: { finalList: GroupedTask[] }) => {
     const newEndIndex = newStartIndex + Math.floor(height / itemHeight);
     setIndices([newStartIndex, newEndIndex]);
   };
+
   // console.log(finalList[0]?.desc);
   return (
     <div className="container">
-      <div className="list-container">
-        <div style={{ height: finalList?.length * itemHeight }}>
-          {finalList?.map((item, idx) => (
+      <div className="list-container" onScroll={handleOnScroll}>
+        <div style={{ height: filteredList.length * itemHeight }}>
+          {visibleList?.map((item, idx) => (
             <div
               className="item"
               key={idx}
@@ -45,6 +55,9 @@ const EvaluatedList = ({ finalList }: { finalList: GroupedTask[] }) => {
             </div>
           ))}
         </div>
+      </div>
+      <div>
+        <Legend />
       </div>
     </div>
   );
