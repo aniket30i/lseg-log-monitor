@@ -1,5 +1,10 @@
 # 🧾 Log Monitoring Application - LSEG Assignment
 
+## 📸 Application Preview
+
+![App Screenshot](./public/screenshots/output-ts.jpg)
+
+
 A frontend application built with **React + TypeScript** to parse `.log` files, evaluate task durations, and flag long-running jobs with **warnings or errors**. This app mimics internal developer tooling and focuses on clear UX, performance, and clean code.
 
 ---
