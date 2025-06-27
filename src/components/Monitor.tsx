@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import { parseLogLine } from "../../utils/parseLogLine.ts";
 import { groupLogsByPid } from "../../utils/groupLogs.ts";
+import EvaluatedList from "./EvaluatedList.tsx";
+import type { GroupedTask } from "../../utils/logTypes.ts";
 
 const Monitor = () => {
   const [text, setText] = useState<string>();
   const [filename, setFileName] = useState<string>();
+  const [catergorizedLog, setCatergorizedLog] = useState<GroupedTask[]>();
 
   useEffect(() => {
     if (!text) return;
@@ -13,6 +16,7 @@ const Monitor = () => {
       ?.map(parseLogLine)
       .filter((line): line is LogLine => line !== null);
     const groupedTasks = groupLogsByPid(parsedLines);
+    setCatergorizedLog(groupedTasks);
 
     console.log(parsedLines);
     console.log(groupedTasks);
@@ -61,8 +65,10 @@ const Monitor = () => {
           )}
         </div>
       </div>
-      <div></div>
-      <div>Show Categorized Logs</div>
+      <label>Here's the Evaluated log result below</label>
+      <div>
+        <EvaluatedList finalList={catergorizedLog} />
+      </div>
     </div>
   );
 };
