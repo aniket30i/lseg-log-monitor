@@ -1,4 +1,5 @@
-import { parseLogLine } from "../../utils/parseLogLine";
+import { parseLogLine } from "./parseLogLine";
+import { describe, it, expect } from "vitest";
 
 describe("parseLogLine", () => {
   it("parses a valid log line correctly", () => {
