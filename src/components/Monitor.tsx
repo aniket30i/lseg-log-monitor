@@ -18,8 +18,8 @@ const Monitor = () => {
     const groupedTasks = groupLogsByPid(parsedLines);
     setTimeout(() => setCatergorizedLog(groupedTasks), 3000);
 
-    console.log(parsedLines);
-    console.log(groupedTasks);
+    // console.log(parsedLines);
+    // console.log(groupedTasks);
   }, [text]);
   // rerun the categorization when the log file changes
 
@@ -34,7 +34,7 @@ const Monitor = () => {
     reader.onload = (e) => {
       const logs = e.target?.result;
       if (typeof logs !== "string") {
-        console.error("File read error: Result is not a string");
+        throw new Error("File read error: Result is not a string");
         return;
       }
       setText(logs as string);
