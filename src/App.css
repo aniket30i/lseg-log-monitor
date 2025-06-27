@@ -1,0 +1,17 @@
+/* body {
+  background-color: var(--background-col);
+} */
+
+.nav-heading {
+  /* color: var(--text-lg); */
+  width: 100%;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(241, 190, 141);
+}
+
+.nav-heading h1 {
+  font-size: 2.5rem;
+}

@@ -1,0 +1,12 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+:root {
+  --background-col: #2c2c2b;
+  --warn-col: #f7df44;
+  --error-col: #f32a3c;
+  --text-lg: #d3d0d0;
+}
