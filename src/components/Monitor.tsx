@@ -6,8 +6,11 @@ const Monitor = () => {
   const [text, setText] = useState<string>();
 
   useEffect(() => {
+    if (!text) return;
     const rawLines = text?.split("\n").filter((line) => line.trim() !== "");
-    const parsedLines = rawLines?.map(parseLogLine);
+    const parsedLines = rawLines
+      ?.map(parseLogLine)
+      .filter((line): line is LogLine => line !== null);
     const groupedTasks = groupLogsByPid(parsedLines);
 
     console.log(parsedLines);
