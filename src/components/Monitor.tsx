@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { parseLogLine } from "../../utils/parseLogLine.ts";
+import { groupLogsByPid } from "../../utils/groupLogs.ts";
 
 const Monitor = () => {
   const [text, setText] = useState<string>();
@@ -7,8 +8,10 @@ const Monitor = () => {
   useEffect(() => {
     const rawLines = text?.split("\n").filter((line) => line.trim() !== "");
     const parsedLines = rawLines?.map(parseLogLine);
+    const groupedTasks = groupLogsByPid(parsedLines);
 
     console.log(parsedLines);
+    console.log(groupedTasks);
   }, [text]);
   // rerun the categorization when the log file changes
 
