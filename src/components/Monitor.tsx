@@ -24,14 +24,16 @@ const Monitor = () => {
 
   return (
     <div>
-      <div>
-        <label>Upload Log</label>
-        <input
-          type="file"
-          accept=".log, .txt"
-          onChange={(e) => handleLogUpload(e)}
-          placeholder="Upload Log"
-        />
+      <div className="upload-section">
+        <div className="upload-container">
+          <h3>Upload a log file to get started</h3>
+          <input
+            type="file"
+            accept=".log, .txt"
+            onChange={(e) => handleLogUpload(e)}
+            placeholder="Upload Log"
+          />
+        </div>
       </div>
       <div></div>
       <div>Show Categorized Logs</div>

@@ -1,6 +1,6 @@
 import "./App.css";
 import NavHeading from "./components/NavHeading";
-import UtilityBar from "./components/Monitor";
+import Monitor from "./components/Monitor";
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
         <NavHeading />
       </nav>
       <main>
-        <UtilityBar />
+        <Monitor />
       </main>
     </div>
   );
