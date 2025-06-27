@@ -4,6 +4,7 @@ import { groupLogsByPid } from "../../utils/groupLogs.ts";
 
 const Monitor = () => {
   const [text, setText] = useState<string>();
+  const [filename, setFileName] = useState<string>();
 
   useEffect(() => {
     if (!text) return;
@@ -33,6 +34,7 @@ const Monitor = () => {
         return;
       }
       setText(logs as string);
+      setFileName(file.name);
     };
     reader.readAsText(file);
   };
@@ -41,13 +43,22 @@ const Monitor = () => {
     <div>
       <div className="upload-section">
         <div className="upload-container">
-          <h3>Upload a log file to get started</h3>
-          <input
-            type="file"
-            accept=".log, .txt"
-            onChange={(e) => handleLogUpload(e)}
-            placeholder="Upload Log"
-          />
+          {filename && text ? (
+            <>
+              <h4>{`📄 Uploaded: ${filename}`}</h4>
+              <button onClick={() => setText("")}>Remove File</button>
+            </>
+          ) : (
+            <div>
+              <h3>Upload a log file to get started</h3>
+              <input
+                type="file"
+                accept=".log, .txt"
+                onChange={(e) => handleLogUpload(e)}
+                placeholder="Upload Log"
+              />
+            </div>
+          )}
         </div>
       </div>
       <div></div>
