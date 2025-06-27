@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { parseLogLine } from "../../utils/parseLogLine.ts";
 import { groupLogsByPid } from "../../utils/groupLogs.ts";
 import EvaluatedList from "./EvaluatedList.tsx";
-import type { GroupedTask } from "../../utils/logTypes.ts";
+import type { GroupedTask, LogLine } from "../../utils/logTypes.ts";
 
 const Monitor = () => {
   const [text, setText] = useState<string>();
@@ -24,7 +24,7 @@ const Monitor = () => {
   // rerun the categorization when the log file changes
 
   const handleLogUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files[0];
+    const file = e.target?.files?.[0];
 
     if (!file) {
       return;

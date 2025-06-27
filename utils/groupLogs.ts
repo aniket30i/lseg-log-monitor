@@ -1,4 +1,4 @@
-import { LogLine, GroupedTask } from "./logTypes";
+import type { LogLine, GroupedTask } from "./logTypes";
 
 function parseTimeToDate(time: string): Date {
   const now = new Date();

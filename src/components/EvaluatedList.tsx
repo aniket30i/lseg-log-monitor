@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import { formatTime } from "../../helper/formatTime";
 import Legend from "./Legend";
+import type { GroupedTask } from "../../utils/logTypes";
 const EvaluatedList = ({ finalList }: { finalList: GroupedTask[] }) => {
   const itemHeight = 100;
   const height = 600;
@@ -22,8 +23,8 @@ const EvaluatedList = ({ finalList }: { finalList: GroupedTask[] }) => {
   // adding caching just in case the list is too long
   const visibleList = filteredList.slice(indices[0], indices[1] + 1);
 
-  const handleOnScroll = (e) => {
-    const { scrollTop } = e.target;
+  const handleOnScroll = (e: React.UIEvent<HTMLDivElement>) => {
+    const { scrollTop } = e.currentTarget;
     const newStartIndex = Math.floor(scrollTop / itemHeight);
     const newEndIndex = newStartIndex + Math.floor(height / itemHeight);
     setIndices([newStartIndex, newEndIndex]);
