@@ -11,10 +11,10 @@ const Monitor = () => {
 
   useEffect(() => {
     if (!text) return;
-    const rawLines = text?.split("\n").filter((line) => line.trim() !== "");
+    const rawLines = text?.split("\n").filter((line) => line.trim() !== ""); // getting all the log entries as separate elements and storing array
     const parsedLines = rawLines
       ?.map(parseLogLine)
-      .filter((line): line is LogLine => line !== null);
+      .filter((line): line is LogLine => line !== null); // destructuring the log data as object with key-value pairs
     const groupedTasks = groupLogsByPid(parsedLines);
     setTimeout(() => setCatergorizedLog(groupedTasks), 3000);
 

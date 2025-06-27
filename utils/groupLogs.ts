@@ -7,6 +7,8 @@ function parseTimeToDate(time: string): Date {
   return new Date(now);
 }
 
+// format string time to date format for the duration calculation
+
 export function groupLogsByPid(logs: LogLine[]): GroupedTask[] {
   const taskMap: Record<string, GroupedTask> = {};
 
@@ -16,6 +18,8 @@ export function groupLogsByPid(logs: LogLine[]): GroupedTask[] {
     if (!taskMap[log.pid]) {
       taskMap[log.pid] = { pid: log.pid, desc: log.desc };
     }
+
+    // adding each elements into a common object pid as the key
 
     const task = taskMap[log.pid];
 
