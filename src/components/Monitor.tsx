@@ -65,7 +65,10 @@ const Monitor = () => {
           )}
         </div>
       </div>
-      <label className="list-heading">Evaluated Logs Report List</label>
+      <header>
+        <label className="list-heading">Evaluated Logs Report List</label>
+      </header>
+
       <div>
         {catergorizedLog ? (
           <EvaluatedList finalList={catergorizedLog} />
