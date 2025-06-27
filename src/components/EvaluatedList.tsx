@@ -28,10 +28,10 @@ const EvaluatedList = ({ finalList }: { finalList: GroupedTask[] }) => {
                 height: itemHeight,
                 backgroundColor:
                   item.status === "OK"
-                    ? "green"
+                    ? "#6cbe6c"
                     : item.status === "WARNING"
-                    ? "yellow"
-                    : "red",
+                    ? "#cab631"
+                    : "#ca844a",
                 position: "absolute",
                 width: "100%",
                 top: (indices[0] + idx) * itemHeight,

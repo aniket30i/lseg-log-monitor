@@ -6,7 +6,8 @@
 }
 :root {
   --background-col: #2c2c2b;
-  --warn-col: #f7df44;
-  --error-col: #f32a3c;
+  --warn-col: #cab631;
+  --error-col: #ca844a;
+  --okay-col: #6cbe6c;
   --text-lg: #d3d0d0;
 }

@@ -16,7 +16,7 @@ const Monitor = () => {
       ?.map(parseLogLine)
       .filter((line): line is LogLine => line !== null);
     const groupedTasks = groupLogsByPid(parsedLines);
-    setCatergorizedLog(groupedTasks);
+    setTimeout(() => setCatergorizedLog(groupedTasks), 3000);
 
     console.log(parsedLines);
     console.log(groupedTasks);
@@ -65,7 +65,7 @@ const Monitor = () => {
           )}
         </div>
       </div>
-      <label>Here's the Evaluated log result below</label>
+      <label className="list-heading">Evaluated Logs Report List</label>
       <div>
         {catergorizedLog ? (
           <EvaluatedList finalList={catergorizedLog} />
