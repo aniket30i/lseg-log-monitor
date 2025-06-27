@@ -4,10 +4,3 @@
   box-sizing: border-box;
   font-family: "Inter", sans-serif;
 }
-:root {
-  --background-col: #f3e7c6;
-  --warn-col: #cab631;
-  --error-col: #ca844a;
-  --okay-col: #6cbe6c;
-  --text-lg: #d3d0d0;
-}

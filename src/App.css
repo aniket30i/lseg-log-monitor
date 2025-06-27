@@ -104,3 +104,20 @@ header {
   border-radius: 100%;
   border: 1px solid #000000;
 }
+
+.loader {
+  font-size: 1.2rem;
+  font-weight: bold;
+  animation: blink 1s infinite;
+  color: #333;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}

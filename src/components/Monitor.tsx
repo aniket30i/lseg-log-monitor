@@ -54,7 +54,7 @@ const Monitor = () => {
             </>
           ) : (
             <div>
-              <h3>Upload a log file to get started</h3>
+              <h3>Upload a log file</h3>
               <input
                 type="file"
                 accept=".log, .txt"
@@ -69,11 +69,25 @@ const Monitor = () => {
         <label className="list-heading">Evaluated Logs Report List</label>
       </header>
 
-      <div>
-        {catergorizedLog ? (
+      <div
+        style={{
+          minHeight: "300px",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        {text && !catergorizedLog ? (
+          <div className="loader">
+            <span>⏳ Analyzing your logs... please wait</span>
+          </div>
+        ) : catergorizedLog ? (
           <EvaluatedList finalList={catergorizedLog} />
         ) : (
-          "Upload Log File for report"
+          <div style={{ textAlign: "center", opacity: 0.7 }}>
+            <h3>📝 No log report yet</h3>
+            <p>Please upload a .log or .txt file to begin analysis.</p>
+          </div>
         )}
       </div>
     </div>

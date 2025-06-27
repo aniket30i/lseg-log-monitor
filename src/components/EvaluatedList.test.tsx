@@ -32,7 +32,7 @@ const mockLogs = [
 
 describe("EvaluatedList Component", () => {
   beforeEach(() => {
-    // Ensure clean DOM state
+    //clean DOM state
     document.body.innerHTML = "";
   });
 
