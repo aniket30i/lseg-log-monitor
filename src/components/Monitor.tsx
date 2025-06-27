@@ -1,7 +1,16 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { parseLogLine } from "../../utils/parseLogLine.ts";
 
 const Monitor = () => {
   const [text, setText] = useState<string>();
+
+  useEffect(() => {
+    const rawLines = text?.split("\n").filter((line) => line.trim() !== "");
+    const parsedLines = rawLines?.map(parseLogLine);
+
+    console.log(parsedLines);
+  }, [text]);
+  // rerun the categorization when the log file changes
 
   const handleLogUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files[0];
