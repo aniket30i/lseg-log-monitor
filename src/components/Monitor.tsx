@@ -67,7 +67,11 @@ const Monitor = () => {
       </div>
       <label>Here's the Evaluated log result below</label>
       <div>
-        <EvaluatedList finalList={catergorizedLog} />
+        {catergorizedLog ? (
+          <EvaluatedList finalList={catergorizedLog} />
+        ) : (
+          "Upload Log File for report"
+        )}
       </div>
     </div>
   );

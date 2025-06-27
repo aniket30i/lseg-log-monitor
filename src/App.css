@@ -36,3 +36,11 @@
   flex-direction: column;
   gap: 12px;
 }
+
+.list-container {
+  width: 600px;
+  height: 600px;
+  overflow: auto;
+  position: relative;
+  background-color: saddlebrown;
+}
