@@ -48,10 +48,11 @@ const EvaluatedList = ({ finalList }: { finalList: GroupedTask[] }) => {
                 borderTop: "5px solid black",
               }}
             >
-              <p>Task Id : {item.pid}</p> <p>Description : {item.desc}</p>{" "}
+              <p>PID : {item.pid}</p> <p>Description : {item.desc}</p>{" "}
               <p>Started at: {item.start ? formatTime(item.start) : "N/A"}</p>
               <p>Ended at: {item.end ? formatTime(item.end) : "N/A"}</p>
-              <p>Duration: {item.duration}</p>
+              <p>Duration: {`${Math.round(item.duration / 60)} minutes`}</p>
+              <p>Alert: {item.status}</p>
             </div>
           ))}
         </div>

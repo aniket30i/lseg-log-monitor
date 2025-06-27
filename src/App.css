@@ -1,6 +1,6 @@
-/* body {
+body {
   background-color: var(--background-col);
-} */
+}
 
 .nav-heading {
   /* color: var(--text-lg); */
@@ -67,6 +67,15 @@ header {
   overflow: auto;
   position: relative;
   background-color: gray;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 10px;
 }
 
 .legend-container {
