@@ -12,7 +12,7 @@ function parseTimeToDate(time: string): Date {
 export function groupLogsByPid(logs: LogLine[]): GroupedTask[] {
   const taskMap: Record<string, GroupedTask> = {};
 
-  console.log("sorting out error and warning");
+  // console.log("sorting out error and warning");
 
   for (const log of logs) {
     if (!taskMap[log.pid]) {
