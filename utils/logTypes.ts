@@ -13,3 +13,5 @@ export type GroupedTask = {
   duration?: number; // in seconds
   status: "OK" | "WARNING" | "ERROR";
 };
+
+// formating the final data to be show for categorization
