@@ -1,19 +1,20 @@
 {
   "compilerOptions": {
-    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
     "target": "ES2023",
-    "lib": ["ES2023"],
-    "module": "ESNext",
-    "skipLibCheck": true,
+    "lib": ["DOM", "ES2023"],
 
-    /* Bundler mode */
+    "module": "ESNext",
     "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
-    "verbatimModuleSyntax": true,
-    "moduleDetection": "force",
+    "skipLibCheck": true,
     "noEmit": true,
 
-    /* Linting */
+    "jsx": "react-jsx",
+    "jsxImportSource": "react",
+
+    "verbatimModuleSyntax": true,
+    "allowImportingTsExtensions": true,
+    "moduleDetection": "force",
+
     "strict": false,
     "noImplicitAny": false,
     "noUnusedLocals": false,
