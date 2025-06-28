@@ -11,7 +11,7 @@ A frontend application built with **React + TypeScript** to parse `.log` files, 
 
 ## 📌 Features
 
-- 🔍 **File upload** for `.log` or .txt  files in a structured format.
+- 🔍 **File upload** for `.log` or `.txt`  files in a structured format.
 - 🧠 **Parsing and evaluation** of each job based on PID and duration.
 - ⚠️ Categorization of jobs into:
   - `"WARNING"` — if between 5–10 minutes.
