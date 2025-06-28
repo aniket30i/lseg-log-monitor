@@ -194,7 +194,7 @@ export function groupLogsByPid(logs: LogLine[]): GroupedTask[]
  */
 export function formatTime(date: Date): string
 
-## Types
+## Custom Types
 
 ```
 
