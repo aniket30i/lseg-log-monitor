@@ -14,7 +14,6 @@ A frontend application built with **React + TypeScript** to parse `.log` files, 
 - 🔍 **File upload** for `.log` files in a structured format.
 - 🧠 **Parsing and evaluation** of each job based on PID and duration.
 - ⚠️ Categorization of jobs into:
-  - `"OK"` — if completed within 5 minutes.
   - `"WARNING"` — if between 5–10 minutes.
   - `"ERROR"` — if longer than 10 minutes or incomplete.
 - 🪟 **Virtualized list** rendering for performance (even with large files).
