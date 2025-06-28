@@ -124,7 +124,7 @@ This suite tests the `EvaluatedList` component, which displays categorized log e
 
 -Zod for input validation
 
--Jest + React Testing Library (for tests)
+-vitest + React Testing Library (for tests)
 
 -Vanilla CSS (for styling)
 
