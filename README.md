@@ -17,7 +17,7 @@ A frontend application built with **React + TypeScript** to parse `.log` files, 
   - `"WARNING"` — if between 5–10 minutes.
   - `"ERROR"` — if longer than 10 minutes or incomplete.
 - 🪟 **Virtualized list** rendering for performance (even with large files).
-- 🎨 **Color-coded UI** to visually separate OK/WARNING/ERROR tasks.
+- 🎨 **Color-coded UI** to visually separate WARNING/ERROR tasks.
 - 🧪 **Test coverage** for parsing logic and rendering behavior (basic unit test suite included).
 
 ---
